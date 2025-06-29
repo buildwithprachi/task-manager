@@ -1,2 +1,2 @@
-# task-manager
-A simple to do list app as a sample project
+# Project
+- Working on a simple task management web app while learning Python & Django.
