@@ -14,4 +14,8 @@ Tech Stack 💻-
 • JSON (for data storage)
 
 How to Run 🚀 -
-  python task_manager.py
+   python task_manager.py
+
+Future improvements 🌱 -
+• Task deadlines and reminders
+• User authentication for multiple profiles
