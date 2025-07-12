@@ -14,6 +14,8 @@ def load():
 
 load()
 
+from datetime import datetime, date
+
 def menu():
     print("Task manager📝")
     print("1. View Tasks")
@@ -27,11 +29,29 @@ def view():
         print("No tasks yet!")
     for i, task in enumerate(tasks, start=1):
         status = "✔️" if task['done'] else "❌"
-        print(f"{i}. {task['title']} - [{status}]")
+        deadline = task.get("deadline", "N/A")
+        
+        if deadline != "N/A":
+            try:
+                deadline_date = datetime.strptime(deadline, "%Y-%m-%d").date()
+                today = date.today()
+                if deadline_date < today:
+                    reminder = "🔴 Overdue"
+                elif deadline_date == today:
+                    reminder = "🟡 Due Today"
+                else:
+                    reminder = "🟢 On Time"
+            except:
+                reminder = "🚧 Invalid Date"
+        else:
+            reminder = "_"
+
+        print(f"{i}. {task['title']} [{status}] | Deadline: {deadline} | {reminder}")
 
 def add():
     new = input("Enter the task: ")
-    task = {"title": new, "done": False}
+    deadline = input("Enter deadline (YYYY-MM-DD): ")
+    task = {"title": new, "done": False, "deadline": deadline}
     tasks.append(task)
     save()
     print("Task added✔️")
