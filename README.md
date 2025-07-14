@@ -1,21 +1,29 @@
 # Project
-A simple Task Management 📝 web app built in Python.
+A simple Task Management 📝 app (CLI + GUI)
 
 Features 🖇️ -
-• Add tasks
-• View tasks with status
-• Mark as complete 
-• Delete tasks
-• Tasks saved across sessions using JSON
-• Error handling
+• ☑️ Add, view, complete, and delete tasks
+• ⏰ Set deadlines and receive reminders
+• 🖼️ GUI with pastel themed interface
+• 📂 Tasks saved across sessions using JSON
+• 📈 Sort tasks by deadline
 
 Tech Stack 💻-
-• Python (core)
-• JSON (for data storage)
+• Python core
+• Tkinter for GUI
+• JSON for data storage
 
 How to Run 🚀 -
-   python task_manager.py
+   
+   CLI version-
+      python task_manager.py
+   GUI version-
+      python gui_task_manager.py
 
-Future improvements 🌱 -
-• Task deadlines and reminders
+
+Future improvements (optional)🌱 -
 • User authentication for multiple profiles
+• Multi-profile support
+
+Preview 📌 -
+![Task Manager GUI](task-manager/media/screenshot.png)
